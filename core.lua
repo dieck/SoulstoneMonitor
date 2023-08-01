@@ -151,7 +151,7 @@ function SoulstoneMonitor:Cleanup(debugNoRemove)
 				local foundSoulstone = false
 
 				local j = 1
-				local name, icon, count, dispelType, duration, expirationTime, source, isStealable, nameplateShowPersonal, spellId = UnitAura(unit, j)
+				local name, _, _, _, _, _, _, _, _, spellId = UnitAura(unit, j)
 
 				while name ~= nil do
 					-- look for Soulstone
@@ -159,7 +159,7 @@ function SoulstoneMonitor:Cleanup(debugNoRemove)
 						foundSoulstone = true
 					end
 					j = j + 1
-					name, icon, count, dispelType, duration, expirationTime, source, isStealable, nameplateShowPersonal, spellId = UnitAura(unit, j)
+					name, _, _, _, _, _, _, _, _, spellId = UnitAura(unit, j)
 				end
 
 				if (not foundSoulstone) then
@@ -198,7 +198,7 @@ function SoulstoneMonitor:ScanRaid()
 			local foundSoulstone = false
 
 			local j = 1
-			local name, icon, count, dispelType, duration, expirationTime, source, isStealable, nameplateShowPersonal, spellId = UnitAura(unit, j)
+			local name, _, _, _, _, expirationTime, _, _, _, spellId = UnitAura(unit, j)
 
 			while name ~= nil do
 				-- look for Soulstone
@@ -218,7 +218,7 @@ function SoulstoneMonitor:ScanRaid()
 
 				end
 				j = j + 1
-				name, icon, count, dispelType, duration, expirationTime, source, isStealable, nameplateShowPersonal, spellId = UnitAura(unit, j)
+				name, _, _, _, _, expirationTime, _, _, _, spellId = UnitAura(unit, j)
 			end
 
 		end
